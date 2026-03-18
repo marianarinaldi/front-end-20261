@@ -1,12 +1,69 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/javascript.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aluno Online</title>
   </head>
   <body>
+    <main>
+      <aside>
+        <header>
+          <img src="/learn.svg" alt="Avatar do usuário">
+          <h2>Aluno Online</h2>
+        </header>
+        <nav>
+          <ul>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#notes">Notas</a></li>
+            <li><a href="#fouls">Faltas</a></li>
+            <li><a href="#slips">Boletos</a></li>
+            <li><a href="#requirements">Requerimentos</a></li>
+            <li><a href="#logout">Sair</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <section>
+        <header>
+          <h1>Olá, Aluno!</h1>
+          <img src="/user-circle.svg" alt="Avatar do usuário">
+        </header>
+        <section>
+          <h2>Bem-vindo ao portal do aluno</h2>
+          <article id="dashboard">
+            <header>
+              <h2>Mural de Avisos</h2>
+            </header>
+            <ul>
+              <li>Inscrição para o projeto de extensão</li>
+              <li>Eleição para representante da turma</li>
+            </ul>
+          </article>
+          <article id="calendario">
+            <header>
+              <h2>Calendário Acadêmico</h2>
+            </header>
+            <ul>
+              <li>23/02 - Início do período letivo 2026-1</li>
+              <li>25/04 - Prazo final para aplicação da P1</li>
+              <li>23/06 - Prazo final para aplicação da P2</li>
+              <li>04/07 - Fim do período letivo 2026-1</li>
+            </ul>
+          </article>
+          <article id="disciplinas">
+            <header>
+              <h2>Minhas Disciplinas</h2>
+            </header>
+            <ul>
+              <li>BI e Data Warehousing</li>
+              <li>Construção de Frontend</li>
+              <li>Banco de Dados</li>
+              <li>UX/UI Design</li>
+            </ul>
+          </article>
+        </section>
+      </section>
+    </main>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
