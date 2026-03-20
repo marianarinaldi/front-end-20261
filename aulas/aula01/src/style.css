@@ -10,7 +10,7 @@
   line-height: 1.6rem;
   --primary-color: black;
   --secondary-color: white;
-  --background-color: brown;
+  --background-color: rgb(241, 242, 217);
 }
 
 body {
