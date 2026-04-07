@@ -32,46 +32,6 @@ body {
   width: 100%;
 }
 
-.login-container {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 1rem;
-  border: 1px solid var(--cor-fundo);
-  border-radius: 1rem;
-  margin: 13rem auto;
-  max-width: 400px;
-}
-
-.login-container > img {
-  height: 8rem;
-  width: 8rem;
-  margin: 0 auto;
-}
-
-.login-container > h1 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.login-container > input[type="text"],
-.login-container > input[type="password"] {
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-}
-
-.login-container > button {
-  background-color: var(--cor-fundo);
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  padding: 0.75rem;
-}
-
 .dashboard-container > section {
   flex: 1;
   display: grid;
@@ -218,14 +178,6 @@ footer {
     flex-direction: row;
     align-items: stretch;
     padding: 0;
-  }
-
-  .login-container {
-    border: 1px solid var(--cor-fundo);
-    border-radius: 1rem;
-    margin: 2rem auto;
-    max-width: 400px;
-    height: 28rem;
   }
 
   aside {
