@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function InputSenha({ senha, erro, mudaValor }) {
   return (
     <>

@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function InputMatricula({ matricula, erro, mudaValor }) {
   return (
     <>
