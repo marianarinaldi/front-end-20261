@@ -1,4 +1,3 @@
-import { useState } from "react";
 import InputMatricula from "../components/InputMatricula";
 import InputSenha from "../components/InputSenha";
 import BotaoSubmit from "../components/BotaoSubmit";
