@@ -3,30 +3,21 @@ import InputMatricula from "../components/InputMatricula";
 import InputSenha from "../components/InputSenha";
 import BotaoSubmit from "../components/BotaoSubmit";
 
-function FormLogin() {
-  const [matricula, setMatricula] = useState();
-  const [senha, setSenha] = useState();
-  const [matriculaErro, setMatriculaErro] = useState();
-  const [senhaErro, setSenhaErro] = useState();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!matricula) {
-      setMatriculaErro("Matricula é obrigatório");
-    }
-    if (!senha) {
-      setSenhaErro("Senha é obrigatória");
-    }
-  };
-
+function FormLogin({
+  matricula,
+  setMatricula,
+  senha,
+  setSenha,
+  matriculaErro,
+  senhaErro,
+  handleSubmit,
+}) {
   const mudaMatricula = (e) => {
     setMatricula(e.target.value);
-    setMatriculaErro("");
   };
 
   const mudaSenha = (e) => {
     setSenha(e.target.value);
-    setSenhaErro("");
   };
 
   return (

@@ -6,7 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 
 function App() {
-  const page = 4;
+  const page = 6;
   return (
     <>
       {page == 1 && <Dashboard />}
