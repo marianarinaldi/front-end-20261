@@ -1,7 +1,26 @@
 {
-  "produtos": [],
-  "clientes": [],
+  "produtos": [
+    {
+      "nome": "Banana",
+      "preco": "9",
+      "unidade": "Kg",
+      "id": "HBwuHc_IOOo"
+    },
+    {
+      "nome": "lucas ribeiro maroneze",
+      "preco": "444",
+      "unidade": "22",
+      "id": "B05OdvXbAuA"
+    },
+    {
+      "nome": "rrrr",
+      "preco": "222",
+      "unidade": "3",
+      "id": "7pbEk_FVg-k"
+    }
+  ],
   "fornecedores": [],
   "pedidos": [],
+  "usuarios": [],
   "$schema": "./node_modules/json-server/schema.json"
 }
