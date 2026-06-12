@@ -5,7 +5,7 @@ import { useAuthContext } from '../contexts/AuthContext';
 
 function Login() {
     const [erro, setErro] = useState();
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const navigate = useNavigate();
     const { login } = useAuthContext();
 
@@ -14,6 +14,7 @@ function Login() {
             await login(dados);
             navigate("/produtos");
             setErro("");
+            reset();
         } catch (error) {
             setErro(error.message);
         }

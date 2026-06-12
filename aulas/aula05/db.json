@@ -11,15 +11,21 @@
       "nome": "Laranja Pera",
       "preco": "15,99",
       "unidade": "Un"
+    },
+    {
+      "nome": "lucas ribeiro maroneze",
+      "preco": "333",
+      "unidade": "3",
+      "id": "cZ1Kro-xuj0"
     }
   ],
   "fornecedores": [],
   "pedidos": [],
   "usuarios": [
     {
-      "id": 1,
-      "email": "jose@iesb.br",
-      "senha": 123456 
+      "email": "m.rinaldi@iesb.edu.br",
+      "senha": "123456",
+      "id": "abcd1234"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

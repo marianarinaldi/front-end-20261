@@ -8,6 +8,7 @@ const AuthContext = createContext();
 function AuthProvider({ children }) {
   const [logado, setLogado] = useState(
     localStorage.getItem("app.token"));
+    
   const [usuario, setUsuario] = useState({});
 
   const login = async (dados) => {
