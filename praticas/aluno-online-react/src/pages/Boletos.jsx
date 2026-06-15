@@ -1,6 +1,5 @@
 import Tabela from "../components/Tabela";
 import Layout from "./Layout";
-import "./Boletos.css";
 
 function Boletos() {
   const boletosData = [
