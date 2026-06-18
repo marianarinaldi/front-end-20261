@@ -1,12 +1,12 @@
-function InputMatricula({ matricula, erro, mudaValor }) {
+function InputMatricula({ email, erro, mudaValor }) {
   return (
     <div className="form-group">
-      <label htmlFor="matricula">Matricula</label>
+      <label htmlFor="email">E-mail</label>
       <input
-        type="number"
-        id="matricula"
-        name="matricula"
-        value={matricula}
+        type="email"
+        id="email"
+        name="email"
+        value={email}
         onChange={mudaValor}
       />
       {!!erro && <p className="field-error">{erro}</p>}

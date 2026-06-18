@@ -29,7 +29,11 @@ function RequerimentoForm() {
       adicionarRequerimentoNaLista(resposta);
       setErroEnvio("");
       navigate("/requerimentos");
-    } catch {
+    } catch (erro) {
+      if (erro?.status === 401) {
+        return;
+      }
+
       setErroEnvio("Não foi possível enviar o requerimento.");
       return;
     }

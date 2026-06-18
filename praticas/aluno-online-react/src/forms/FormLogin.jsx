@@ -3,16 +3,16 @@ import InputSenha from "../components/InputSenha";
 import BotaoSubmit from "../components/BotaoSubmit";
 
 function FormLogin({
-  matricula,
-  setMatricula,
+  email,
+  setEmail,
   senha,
   setSenha,
-  matriculaErro,
+  emailErro,
   senhaErro,
   handleSubmit,
 }) {
-  const mudaMatricula = (e) => {
-    setMatricula(e.target.value);
+  const mudaEmail = (e) => {
+    setEmail(e.target.value);
   };
 
   const mudaSenha = (e) => {
@@ -22,9 +22,9 @@ function FormLogin({
   return (
     <form className="login-form" onSubmit={handleSubmit}>
         <InputMatricula
-          matricula={matricula}
-          erro={matriculaErro}
-          mudaValor={mudaMatricula}
+          email={email}
+          erro={emailErro}
+          mudaValor={mudaEmail}
         />
         <InputSenha senha={senha} erro={senhaErro} mudaValor={mudaSenha} />
       <BotaoSubmit>Entrar</BotaoSubmit>

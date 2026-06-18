@@ -7,25 +7,31 @@ import "./Login.css";
 
 function Login() {
   const { login, logado } = useAuthContext();
-  const [matricula, setMatricula] = useState("");
+  const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const [matriculaErro, setMatriculaErro] = useState("");
+  const [emailErro, setEmailErro] = useState("");
   const [senhaErro, setSenhaErro] = useState("");
+  const [erroLogin, setErroLogin] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const novaMatriculaErro = matricula.trim() ? "" : "Informe a matrícula.";
+    const novoEmailErro = email.trim() ? "" : "Informe o e-mail.";
     const novaSenhaErro = senha.trim() ? "" : "Informe a senha.";
 
-    setMatriculaErro(novaMatriculaErro);
+    setEmailErro(novoEmailErro);
     setSenhaErro(novaSenhaErro);
+    setErroLogin("");
 
-    if (novaMatriculaErro || novaSenhaErro) {
+    if (novoEmailErro || novaSenhaErro) {
       return;
     }
 
-    login({ matricula, senha });
+    try {
+      await login({ email, senha });
+    } catch (erro) {
+      setErroLogin(erro.message || "Não foi possível entrar.");
+    }
   };
 
   if (logado) {
@@ -41,16 +47,17 @@ function Login() {
           <p>Acesse o portal para acompanhar sua vida acadêmica.</p>
         </div>
 
-        {(matriculaErro || senhaErro) && (
+        {(emailErro || senhaErro || erroLogin) && (
           <div className="login-error">Revise os campos destacados.</div>
         )}
+        {erroLogin && <div className="login-error">{erroLogin}</div>}
 
       <FormLogin
-        matricula={matricula}
-        setMatricula={setMatricula}
+        email={email}
+        setEmail={setEmail}
         senha={senha}
         setSenha={setSenha}
-        matriculaErro={matriculaErro}
+        emailErro={emailErro}
         senhaErro={senhaErro}
         handleSubmit={handleSubmit}
       />
