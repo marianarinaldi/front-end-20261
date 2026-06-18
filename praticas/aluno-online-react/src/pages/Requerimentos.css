@@ -42,6 +42,11 @@
   gap: 28px;
 }
 
+.requerimentos-error {
+  color: var(--danger);
+  font-weight: 500;
+}
+
 .requerimentos-section {
   background: white;
   border-radius: var(--radius-lg);

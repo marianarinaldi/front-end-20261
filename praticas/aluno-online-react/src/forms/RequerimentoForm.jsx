@@ -1,5 +1,8 @@
 import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import "./RequerimentoForm.css";
+import { cadastrarRequerimento } from "../services/requerimentoService";
 
 function RequerimentoForm() {
   const {
@@ -8,9 +11,29 @@ function RequerimentoForm() {
     reset,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
+  const { adicionarRequerimentoNaLista } = useOutletContext();
+  const [erroEnvio, setErroEnvio] = useState("");
 
-  const onSubmit = (data) => {
-    console.log("Requerimento enviado com sucesso:", data);
+  const onSubmit = async (data) => {
+    const novoRequerimento = {
+      tipo: data.tipoRequerimento,
+      descricao: data.descricao,
+      data: new Date().toLocaleDateString("pt-BR"),
+      status: "Pendente",
+    };
+
+    try {
+      const resposta = await cadastrarRequerimento(novoRequerimento);
+      console.log("Requerimento enviado com sucesso:", resposta);
+      adicionarRequerimentoNaLista(resposta);
+      setErroEnvio("");
+      navigate("/requerimentos");
+    } catch {
+      setErroEnvio("Não foi possível enviar o requerimento.");
+      return;
+    }
+
     reset();
   };
 
@@ -67,6 +90,7 @@ function RequerimentoForm() {
         <button type="submit" className="requerimento-form-submit">
           Enviar requerimento
         </button>
+        {erroEnvio && <p className="requerimento-form-error">{erroEnvio}</p>}
       </form>
     </section>
   );

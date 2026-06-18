@@ -1,0 +1,19 @@
+{
+  "requerimentos": [
+    {
+      "id": "1",
+      "tipo": "Histórico Escolar",
+      "descricao": "Solicitação de emissão do histórico escolar atualizado.",
+      "data": "18/06/2026",
+      "status": "Pendente"
+    },
+    {
+      "tipo": "dispensa-disciplina",
+      "descricao": "rrrrrrrrrrrrrrr",
+      "data": "18/06/2026",
+      "status": "Pendente",
+      "id": "fX0gAIRQKEs"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
