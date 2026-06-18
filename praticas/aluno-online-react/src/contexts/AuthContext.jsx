@@ -7,11 +7,11 @@ function AuthProvider({ children }) {
   const [usuario, setUsuario] = useState(null);
 
   const login = (dados) => {
-    const matricula = (dados?.matricula ?? "").toString().trim();
+    
     setUsuario({
-      id: matricula || "0",
-      nome: "Jose",
-      email: `${matricula || "aluno"}@iesb.edu.br`,
+      id: "0",
+      nome: "mariana",
+      email: `mariana@iesb.edu.br`,
     });
     setLogado(true);
   };
@@ -23,7 +23,6 @@ function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider value={{ logado, usuario, login, logout }}>
-      {/* value =  estado compartilhado */}
       {children}
     </AuthContext.Provider>
   );

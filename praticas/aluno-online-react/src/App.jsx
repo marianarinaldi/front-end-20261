@@ -14,7 +14,7 @@ import Layout from "./layouts/Layout";
 function App() {
   return (
     <Routes>
-      {/* <Route path="/login" element={<Login />} /> */}
+      <Route path="/login" element={<Login />} />
       <Route path="/" element={<Layout />}>
         <Route index element={<Dashboard />} />
         <Route path="faltas" element={<Faltas />} />
