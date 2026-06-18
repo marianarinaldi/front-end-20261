@@ -7,11 +7,11 @@ function AuthProvider({ children }) {
   const [usuario, setUsuario] = useState(null);
 
   const login = (dados) => {
-    
+    const matricula = (dados?.matricula ?? "").toString().trim();
     setUsuario({
-      id: "0",
-      nome: "mariana",
-      email: `mariana@iesb.edu.br`,
+      id: matricula || "0",
+      nome: "Jose",
+      email: `${matricula || "aluno"}@iesb.edu.br`,
     });
     setLogado(true);
   };
