@@ -1,5 +1,4 @@
 import Tabela from "../components/Tabela";
-import Layout from "./Layout";
 import "./Boletos.css";
 
 function Boletos() {
@@ -14,9 +13,23 @@ function Boletos() {
   const boletosColunas = ["Vencimento", "Valor R$", "Situação"];
 
   return (
-    <Layout titulo="Meus boletos" subtitulo="Histórico de pagamento">
-      <Tabela titulos={boletosColunas} dados={boletosData} />
-    </Layout>
+    <>
+      <header className="boletos-header">
+        <div>
+          <h1>Meus boletos</h1>
+          <p className="boletos-subtitle">Histórico de pagamento</p>
+        </div>
+      </header>
+
+      <section className="boletos-container">
+        <Tabela
+          titulos={boletosColunas}
+          dados={boletosData}
+          classPrefix="boletos"
+          tituloSecao="Mensalidades"
+        />
+      </section>
+    </>
   );
 }
 

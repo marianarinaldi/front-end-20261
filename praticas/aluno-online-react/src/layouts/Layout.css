@@ -1,5 +1,9 @@
-/* Layout Principal */
-aside {
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-layout__sidebar {
   width: 280px;
   background: linear-gradient(135deg, var(--bg-dark) 0%, #1a2d4a 100%);
   color: white;
@@ -12,34 +16,29 @@ aside {
   flex-shrink: 0;
 }
 
-main {
+.app-layout__content {
   flex: 1;
   padding: 40px;
   background-color: var(--bg);
   overflow-y: auto;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
-  aside {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .app-layout__sidebar {
     width: 100%;
     height: auto;
     position: relative;
     padding: 16px;
   }
 
-  main {
+  .app-layout__content {
     padding: 20px;
   }
-
-  #root {
-    flex-direction: column;
-  }
-}
-
-/* Animações de Transição */
-main {
-  animation: fadeIn 0.3s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -47,6 +46,7 @@ main {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

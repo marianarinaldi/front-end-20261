@@ -1,18 +1,21 @@
 import "./Menu.css";
 import { Link, NavLink } from "react-router-dom";
-import { useAuthContext } from "../contexts/AuthContext";
+import useAuthContext from "../contexts/useAuthContext";
 
 function Menu() {
   const { logout, usuario } = useAuthContext();
+  const nomeUsuario = usuario?.nome ?? "Aluno(a)";
+  const emailUsuario = usuario?.email ?? "sem-email@iesb.edu.br";
+  const idUsuario = usuario?.id ?? "0";
 
   const handleSair = () => {
     logout();
   };
 
   return (
-    <nav>
-      <h4>{usuario.nome}</h4>
-      <h5>{usuario.email}</h5>
+    <nav className="menu">
+      <h4>{nomeUsuario}</h4>
+      <h5>{emailUsuario}</h5>
       <ul>
         <li>
           <NavLink
@@ -25,7 +28,7 @@ function Menu() {
         </li>
         <li>
           <NavLink
-            to={`/perfil/${usuario.id}`}
+            to={`/perfil/${idUsuario}`}
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             Perfil
@@ -80,7 +83,7 @@ function Menu() {
           </NavLink>
         </li>
         <li>
-          <Link to="/login" onClick={handleSair}>
+          <Link to="/login" onClick={handleSair} replace>
             Sair
           </Link>
         </li>

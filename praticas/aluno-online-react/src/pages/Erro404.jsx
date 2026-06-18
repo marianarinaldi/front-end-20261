@@ -1,14 +1,22 @@
 import { Link } from "react-router-dom";
+import "./Erro404.css";
 
 function Erro404() {
   return (
-    <div style={{ textAlign: "center", padding: "40px 20px" }}>
-      <h1 style={{ fontSize: "64px", margin: "0" }}>404</h1>
-      <h2>Página Não Encontrada</h2>
-      <p>Desculpe, a página que você procura não existe.</p>
-      <Link to="/" style={{ color: "var(--accent)", textDecoration: "none" }}>
-        Voltar para Home
-      </Link>
+    <div className="erro404-container">
+      <div className="erro404-card">
+        <div className="erro404-icon">🚫</div>
+        <h1 className="erro404-code">404</h1>
+        <h2 className="erro404-title">Página Não Encontrada</h2>
+        <p className="erro404-message">
+          Desculpe, a página que você procura não existe.
+        </p>
+        <div className="erro404-actions">
+          <Link to="/" className="erro404-button">
+            Voltar para Home
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import Layout from "./Layout";
 import Card from "../components/Card";
+import "./Dashboard.css";
 
 function Dashboard() {
   const avisos = ["Eleição para representante", "Participe do IESB-SE"];
@@ -13,12 +13,20 @@ function Dashboard() {
     "Banco de Dados",
     "Engenharia de Software",
   ];
+
   return (
-    <Layout titulo="Olá, ALuno" subtitulo="Bem-vindo ao portal do aluno">
-      <Card titulo="Mural de Avisos" items={avisos} />
-      <Card titulo="Calendário Academico" items={datas} />
-      <Card titulo="Minhas diciplinas" items={disciplinas} />
-    </Layout>
+    <>
+      <header className="dashboard-header">
+        <h1>Olá, Aluno</h1>
+        <p>Bem-vindo ao portal do aluno</p>
+      </header>
+
+      <section className="dashboard-grid">
+        <Card titulo="Mural de Avisos" items={avisos} />
+        <Card titulo="Calendário Acadêmico" items={datas} />
+        <Card titulo="Minhas disciplinas" items={disciplinas} />
+      </section>
+    </>
   );
 }
 

@@ -1,8 +1,8 @@
 function BotaoSubmit({ children }) {
   return (
-    <>
-      <button type="submit">{children}</button>
-    </>
+    <button className="login-button" type="submit">
+      {children}
+    </button>
   );
 }
 

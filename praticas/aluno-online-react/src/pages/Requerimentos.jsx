@@ -1,5 +1,4 @@
 import Tabela from "../components/Tabela";
-import Layout from "./Layout";
 import "./Requerimentos.css";
 
 function Requerimentos() {
@@ -21,12 +20,25 @@ function Requerimentos() {
   ];
 
   return (
-    <Layout
-      titulo="Meus requerimentos"
-      subtitulo="Faça solicitações online para a secretaria"
-    >
-      <Tabela titulos={requerimentosColunas} dados={requerimentosData} />
-    </Layout>
+    <>
+      <header className="requerimentos-header">
+        <div>
+          <h1>Meus requerimentos</h1>
+          <p className="requerimentos-subtitle">
+            Faça solicitações online para a secretaria
+          </p>
+        </div>
+      </header>
+
+      <section className="requerimentos-container">
+        <Tabela
+          titulos={requerimentosColunas}
+          dados={requerimentosData}
+          classPrefix="requerimentos"
+          tituloSecao="Solicitações"
+        />
+      </section>
+    </>
   );
 }
 

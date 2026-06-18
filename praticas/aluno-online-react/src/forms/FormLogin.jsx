@@ -20,17 +20,15 @@ function FormLogin({
   };
 
   return (
-    <>
-      <form action="" onSubmit={handleSubmit}>
+    <form className="login-form" onSubmit={handleSubmit}>
         <InputMatricula
           matricula={matricula}
           erro={matriculaErro}
           mudaValor={mudaMatricula}
         />
         <InputSenha senha={senha} erro={senhaErro} mudaValor={mudaSenha} />
-        <BotaoSubmit children={"Entrar"} />
-      </form>
-    </>
+      <BotaoSubmit>Entrar</BotaoSubmit>
+    </form>
   );
 }
 

@@ -1,6 +1,6 @@
 function InputSenha({ senha, erro, mudaValor }) {
   return (
-    <>
+    <div className="form-group">
       <label htmlFor="senha">Senha</label>
       <input
         type="password"
@@ -9,8 +9,8 @@ function InputSenha({ senha, erro, mudaValor }) {
         value={senha}
         onChange={mudaValor}
       />
-      <p>{erro}</p>
-    </>
+      {!!erro && <p className="field-error">{erro}</p>}
+    </div>
   );
 }
 

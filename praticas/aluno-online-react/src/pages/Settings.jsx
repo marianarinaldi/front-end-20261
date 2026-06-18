@@ -1,35 +1,46 @@
+import "./Settings.css";
+
 function Settings() {
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Configurações</h1>
-      <div style={{ marginTop: "20px" }}>
-        <h2>Preferências de Usuário</h2>
-        <p>Aqui você pode configurar suas preferências pessoais.</p>
+    <>
+      <header className="settings-header">
+        <h1>Configurações</h1>
+        <p className="settings-subtitle">Preferências da sua conta</p>
+      </header>
 
-        <div style={{ marginTop: "15px" }}>
-          <label>
-            <input type="checkbox" defaultChecked /> Receber notificações por
-            email
-          </label>
-        </div>
+      <section className="settings-container">
+        <article className="settings-section">
+          <h2>Preferências de Usuário</h2>
 
-        <div style={{ marginTop: "10px" }}>
-          <label>
-            <input type="checkbox" defaultChecked /> Notificações de notas
-          </label>
-        </div>
+          <div className="settings-item">
+            <div className="settings-label">
+              <h3>Receber notificações por email</h3>
+            </div>
+            <button className="settings-toggle active" type="button" />
+          </div>
 
-        <div style={{ marginTop: "10px" }}>
-          <label>
-            <input type="checkbox" defaultChecked /> Notificações de boletos
-          </label>
-        </div>
+          <div className="settings-item">
+            <div className="settings-label">
+              <h3>Notificações de notas</h3>
+            </div>
+            <button className="settings-toggle active" type="button" />
+          </div>
 
-        <button style={{ marginTop: "20px", padding: "10px 20px" }}>
-          Salvar Configurações
-        </button>
-      </div>
-    </div>
+          <div className="settings-item">
+            <div className="settings-label">
+              <h3>Notificações de boletos</h3>
+            </div>
+            <button className="settings-toggle active" type="button" />
+          </div>
+
+          <div className="settings-actions">
+            <button className="btn btn-primary" type="button">
+              Salvar Configurações
+            </button>
+          </div>
+        </article>
+      </section>
+    </>
   );
 }
 

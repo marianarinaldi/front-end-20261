@@ -1,0 +1,171 @@
+/* Perfil - Página de Perfil do Aluno */
+.perfil-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.perfil-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.perfil-subtitle {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-top: 8px;
+}
+
+.perfil-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.perfil-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.perfil-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.perfil-card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0 0 20px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--primary);
+}
+
+.perfil-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.perfil-info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+}
+
+.perfil-info-label {
+  font-weight: 600;
+  color: var(--text-h);
+  min-width: 120px;
+}
+
+.perfil-info-value {
+  color: var(--text);
+}
+
+.perfil-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.perfil-card .form-group {
+  margin-bottom: 20px;
+}
+
+.perfil-card .form-group label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-h);
+  margin-bottom: 8px;
+}
+
+.perfil-card .form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.perfil-card .form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.perfil-card .field-error {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--danger);
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-secondary {
+  background: var(--bg-secondary);
+  color: var(--text-h);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-tertiary);
+}
+
+@media (max-width: 768px) {
+  .perfil-header {
+    flex-direction: column;
+  }
+
+  .perfil-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .perfil-container {
+    grid-template-columns: 1fr;
+  }
+
+  .perfil-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

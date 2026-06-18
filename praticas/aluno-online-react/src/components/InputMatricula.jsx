@@ -1,6 +1,6 @@
 function InputMatricula({ matricula, erro, mudaValor }) {
   return (
-    <>
+    <div className="form-group">
       <label htmlFor="matricula">Matricula</label>
       <input
         type="number"
@@ -9,8 +9,8 @@ function InputMatricula({ matricula, erro, mudaValor }) {
         value={matricula}
         onChange={mudaValor}
       />
-      <p>{erro}</p>
-    </>
+      {!!erro && <p className="field-error">{erro}</p>}
+    </div>
   );
 }
 

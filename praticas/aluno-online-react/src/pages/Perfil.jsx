@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import "./Perfil.css";
 
 function Perfil() {
   const { id } = useParams();
@@ -33,94 +34,66 @@ function Perfil() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Perfil do Usuário {id}</h1>
-      <form onSubmit={handleSubmit(salvar)} style={{ maxWidth: "400px" }}>
-        <div style={{ marginBottom: "15px" }}>
+    <>
+      <header className="perfil-header">
+        <div>
+          <h1>Perfil do Usuário {id}</h1>
+          <p className="perfil-subtitle">Atualize suas informações pessoais</p>
+        </div>
+      </header>
+
+      <section className="perfil-container">
+        <article className="perfil-card">
+          <h2>Dados Cadastrais</h2>
+          <form onSubmit={handleSubmit(salvar)}>
+            <div className="form-group">
           <label htmlFor="nome">Nome</label>
           <input
             type="text"
             id="nome"
             placeholder="Digite seu nome"
             {...register("nome", regras.nome)}
-            style={{
-              display: "block",
-              width: "100%",
-              padding: "8px",
-              marginTop: "5px",
-              border: "1px solid #ddd",
-              borderRadius: "4px",
-            }}
           />
           {errors?.nome && (
-            <p style={{ color: "red", fontSize: "12px" }}>
-              {errors.nome.message}
-            </p>
+              <p className="field-error">{errors.nome.message}</p>
           )}
-        </div>
+            </div>
 
-        <div style={{ marginBottom: "15px" }}>
+            <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
             placeholder="Digite seu email"
             {...register("email", regras.email)}
-            style={{
-              display: "block",
-              width: "100%",
-              padding: "8px",
-              marginTop: "5px",
-              border: "1px solid #ddd",
-              borderRadius: "4px",
-            }}
           />
           {errors?.email && (
-            <p style={{ color: "red", fontSize: "12px" }}>
-              {errors.email.message}
-            </p>
+              <p className="field-error">{errors.email.message}</p>
           )}
-        </div>
+            </div>
 
-        <div style={{ marginBottom: "15px" }}>
+            <div className="form-group">
           <label htmlFor="telefone">Telefone</label>
           <input
             type="tel"
             id="telefone"
             placeholder="Digite seu telefone"
             {...register("telefone", regras.telefone)}
-            style={{
-              display: "block",
-              width: "100%",
-              padding: "8px",
-              marginTop: "5px",
-              border: "1px solid #ddd",
-              borderRadius: "4px",
-            }}
           />
           {errors?.telefone && (
-            <p style={{ color: "red", fontSize: "12px" }}>
-              {errors.telefone.message}
-            </p>
+              <p className="field-error">{errors.telefone.message}</p>
           )}
-        </div>
+            </div>
 
-        <button
-          type="submit"
-          style={{
-            padding: "10px 20px",
-            backgroundColor: "var(--accent)",
-            color: "white",
-            border: "none",
-            borderRadius: "4px",
-            cursor: "pointer",
-            fontSize: "14px",
-          }}
-        >
-          Salvar
-        </button>
-      </form>
-    </div>
+            <div className="perfil-actions">
+              <button type="submit" className="btn btn-primary">
+                Salvar
+              </button>
+            </div>
+          </form>
+        </article>
+      </section>
+    </>
   );
 }
 

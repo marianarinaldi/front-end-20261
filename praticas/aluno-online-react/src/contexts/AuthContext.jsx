@@ -1,25 +1,23 @@
-import { createContext, useContext, useState } from "react";
-
-// cria o contexto
-const AuthContext = createContext();
+import { useState } from "react";
+import { AuthContext } from "./AuthContextData";
 
 // cria o provedor
 function AuthProvider({ children }) {
-  const [logado, setLogado] = useState(true);
-  const [usuario, setUsuario] = useState({});
+  const [logado, setLogado] = useState(false);
+  const [usuario, setUsuario] = useState(null);
 
   const login = (dados) => {
-    // chamar a API passando dados
-    setUsuario({ 
-        id: 0, 
-        nome: "Jose", 
-        email: "jose@iesb.edu.br" 
+    const matricula = (dados?.matricula ?? "").toString().trim();
+    setUsuario({
+      id: matricula || "0",
+      nome: "Jose",
+      email: `${matricula || "aluno"}@iesb.edu.br`,
     });
     setLogado(true);
   };
 
   const logout = () => {
-    setUsuario({});
+    setUsuario(null);
     setLogado(false);
   };
 
@@ -31,8 +29,4 @@ function AuthProvider({ children }) {
   );
 }
 
-function useAuthContext() {
-    return useContext(AuthContext);
-}
-
-export { useAuthContext, AuthProvider };
+export { AuthProvider };

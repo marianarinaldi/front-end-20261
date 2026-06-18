@@ -1,5 +1,4 @@
 import Tabela from "../components/Tabela";
-import Layout from "./Layout";
 import "./Faltas.css";
 
 function Faltas() {
@@ -23,11 +22,35 @@ function Faltas() {
   };
 
   return (
-    <Layout titulo="Minhas faltas" subtitulo="Histórico de faltas por semestre">
-      <Tabela titulos={faltasColunas} dados={faltasData[2024.1]} />
-      <Tabela titulos={faltasColunas} dados={faltasData[2024.2]} />
-      <Tabela titulos={faltasColunas} dados={faltasData[2025.1]} />
-    </Layout>
+    <>
+      <header className="faltas-header">
+        <div>
+          <h1>Minhas faltas</h1>
+          <p className="faltas-subtitle">Histórico de faltas por semestre</p>
+        </div>
+      </header>
+
+      <section className="faltas-container">
+        <Tabela
+          titulos={faltasColunas}
+          dados={faltasData[2024.1]}
+          classPrefix="faltas"
+          tituloSecao="2024.1"
+        />
+        <Tabela
+          titulos={faltasColunas}
+          dados={faltasData[2024.2]}
+          classPrefix="faltas"
+          tituloSecao="2024.2"
+        />
+        <Tabela
+          titulos={faltasColunas}
+          dados={faltasData[2025.1]}
+          classPrefix="faltas"
+          tituloSecao="2025.1"
+        />
+      </section>
+    </>
   );
 }
 

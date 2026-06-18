@@ -1,68 +1,128 @@
-section > header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-section > section {
-  background: #f9f9f9;
-  padding: 1rem;
-  border-radius: 8px;
-}
-ul {
-  margin-top: 1rem;
-}
-.boletos {
-  width: 100%;
-}
+/* Boletos - Página de Boletos */
 .boletos-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: 32px;
 }
+
 .boletos-header h1 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 700;
+  color: var(--text-h);
   margin: 0;
 }
-.boletos-header img {
-  width: 48px;
-  height: 48px;
-}
+
 .boletos-subtitle {
-  font-size: 1.2rem;
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-top: 8px;
+}
+
+.boletos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.boletos-section {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 0;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.boletos-section-title {
+  background: linear-gradient(135deg, var(--danger) 0%, #991b1b 100%);
+  color: white;
+  padding: 16px 24px;
   font-weight: 600;
-  margin-bottom: 2rem;
+  font-size: 1.1rem;
 }
-.boletos-table-block {
-  background: #f6f6f6;
-  border-radius: 10px;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+
+.boletos-table-wrapper {
+  overflow-x: auto;
 }
+
 .boletos-table {
   width: 100%;
   border-collapse: collapse;
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
+  background: white;
 }
-.boletos-table th,
-.boletos-table td {
-  border: 1px solid #ddd;
-  padding: 0.5rem 0.7rem;
-  text-align: left;
+
+.boletos-table thead {
+  background: var(--bg-secondary);
+  border-bottom: 2px solid var(--border);
 }
+
 .boletos-table th {
-  background: #f0f0f0;
-  font-weight: 700;
+  padding: 16px 20px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-h);
+  font-size: 0.95rem;
 }
-@media (max-width: 800px) {
-  .boletos-header h1 {
-    font-size: 1.5rem;
+
+.boletos-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.boletos-table tbody tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+.boletos-table td {
+  padding: 16px 20px;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.boletos-table td:first-child {
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.boletos-status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.status-pago {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-pendente {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-vencido {
+  background-color: #fee2e2;
+  color: #7f1d1d;
+}
+
+@media (max-width: 768px) {
+  .boletos-header {
+    flex-direction: column;
   }
-  .boletos-table-block {
-    padding: 0.7rem 0.5rem;
+
+  .boletos-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .boletos-table {
+    font-size: 0.9rem;
+  }
+
+  .boletos-table th,
+  .boletos-table td {
+    padding: 12px 10px;
   }
 }
