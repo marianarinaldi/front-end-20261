@@ -1,7 +1,11 @@
 import Tabela from "../components/Tabela";
 import "./Requerimentos.css";
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 function Requerimentos() {
+  const location = useLocation();
+  const exibirFormulario = location.pathname.endsWith("/novo");
+
   const requerimentosColunas = [
     "Tipo de Requerimento",
     "Data de Solicitação",
@@ -28,16 +32,26 @@ function Requerimentos() {
             Faça solicitações online para a secretaria
           </p>
         </div>
+
+        {!exibirFormulario && (
+          <Link to="novo" className="requerimentos-new-button">
+            ➕ Novo Requerimento
+          </Link>
+        )}
       </header>
 
-      <section className="requerimentos-container">
-        <Tabela
-          titulos={requerimentosColunas}
-          dados={requerimentosData}
-          classPrefix="requerimentos"
-          tituloSecao="Solicitações"
-        />
-      </section>
+      {exibirFormulario ? (
+        <Outlet />
+      ) : (
+        <section className="requerimentos-container">
+          <Tabela
+            titulos={requerimentosColunas}
+            dados={requerimentosData}
+            classPrefix="requerimentos"
+            tituloSecao="Solicitações"
+          />
+        </section>
+      )}
     </>
   );
 }
