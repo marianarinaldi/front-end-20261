@@ -1,0 +1,129 @@
+/* Faltas - Página de Faltas */
+.faltas-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.faltas-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.faltas-subtitle {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-top: 8px;
+}
+
+.faltas-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.faltas-section {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 0;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.faltas-section-title {
+  background: linear-gradient(135deg, var(--warning) 0%, #d97706 100%);
+  color: white;
+  padding: 16px 24px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.faltas-table-wrapper {
+  overflow-x: auto;
+}
+
+.faltas-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.faltas-table thead {
+  background: var(--bg-secondary);
+  border-bottom: 2px solid var(--border);
+}
+
+.faltas-table th {
+  padding: 16px 20px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-h);
+  font-size: 0.95rem;
+}
+
+.faltas-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.faltas-table tbody tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+.faltas-table td {
+  padding: 16px 20px;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.faltas-table td:first-child {
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.faltas-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.faltas-badge-low {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.faltas-badge-medium {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.faltas-badge-high {
+  background-color: #fee2e2;
+  color: #7f1d1d;
+}
+
+@media (max-width: 768px) {
+  .faltas-header {
+    flex-direction: column;
+  }
+
+  .faltas-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .faltas-table {
+    font-size: 0.9rem;
+  }
+
+  .faltas-table th,
+  .faltas-table td {
+    padding: 12px 10px;
+  }
+}

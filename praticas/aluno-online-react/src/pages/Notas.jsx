@@ -1,5 +1,5 @@
 import Tabela from "../components/Tabela";
-import Layout from "./Layout";
+import "./Notas.css";
 
 function Notas() {
   const colunas = ["Disciplina", "A1", "A2", "A3", "Menção"];
@@ -62,12 +62,37 @@ function Notas() {
       },
     ],
   };
+
   return (
-    <Layout titulo="Minhas notas" subtitulo="Historico de notas por semestre">
-      <Tabela titulos={colunas} dados={data[2026.1]} />
-      <Tabela titulos={colunas} dados={data[2025.2]} />
-      <Tabela titulos={colunas} dados={data[2025.1]} />
-    </Layout>
+    <>
+      <header className="notas-header">
+        <div>
+          <h1>Minhas notas</h1>
+          <p className="notas-subtitle">Histórico de notas por semestre</p>
+        </div>
+      </header>
+
+      <section className="notas-container">
+        <Tabela
+          titulos={colunas}
+          dados={data[2026.1]}
+          classPrefix="notas"
+          tituloSecao="2026.1"
+        />
+        <Tabela
+          titulos={colunas}
+          dados={data[2025.2]}
+          classPrefix="notas"
+          tituloSecao="2025.2"
+        />
+        <Tabela
+          titulos={colunas}
+          dados={data[2025.1]}
+          classPrefix="notas"
+          tituloSecao="2025.1"
+        />
+      </section>
+    </>
   );
 }
 
