@@ -8,6 +8,7 @@ function InputSenha({ senha, erro, mudaValor }) {
         name="senha"
         value={senha}
         onChange={mudaValor}
+        placeholder="Digite sua senha"
       />
       {!!erro && <p className="field-error">{erro}</p>}
     </div>

@@ -8,6 +8,7 @@ function InputMatricula({ email, erro, mudaValor }) {
         name="email"
         value={email}
         onChange={mudaValor}
+        placeholder="Digite sua matrícula"
       />
       {!!erro && <p className="field-error">{erro}</p>}
     </div>

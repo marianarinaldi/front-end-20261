@@ -7,7 +7,6 @@ import Requerimentos from "./pages/Requerimentos";
 import Perfil from "./pages/Perfil";
 import About from "./pages/About";
 import Settings from "./pages/Settings";
-import Login from "./pages/Login";
 import Erro404 from "./pages/Erro404";
 import Layout from "./layouts/Layout";
 import RequerimentoForm from "./forms/RequerimentoForm";

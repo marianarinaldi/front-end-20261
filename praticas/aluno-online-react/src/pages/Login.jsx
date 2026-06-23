@@ -52,15 +52,15 @@ function Login() {
         )}
         {erroLogin && <div className="login-error">{erroLogin}</div>}
 
-      <FormLogin
-        email={email}
-        setEmail={setEmail}
-        senha={senha}
-        setSenha={setSenha}
-        emailErro={emailErro}
-        senhaErro={senhaErro}
-        handleSubmit={handleSubmit}
-      />
+        <FormLogin
+          email={email}
+          setEmail={setEmail}
+          senha={senha}
+          setSenha={setSenha}
+          emailErro={emailErro}
+          senhaErro={senhaErro}
+          handleSubmit={handleSubmit}
+        />
       </div>
     </div>
   );

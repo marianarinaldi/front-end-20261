@@ -21,12 +21,8 @@ function FormLogin({
 
   return (
     <form className="login-form" onSubmit={handleSubmit}>
-        <InputMatricula
-          email={email}
-          erro={emailErro}
-          mudaValor={mudaEmail}
-        />
-        <InputSenha senha={senha} erro={senhaErro} mudaValor={mudaSenha} />
+      <InputMatricula email={email} erro={emailErro} mudaValor={mudaEmail} />
+      <InputSenha senha={senha} erro={senhaErro} mudaValor={mudaSenha} />
       <BotaoSubmit>Entrar</BotaoSubmit>
     </form>
   );

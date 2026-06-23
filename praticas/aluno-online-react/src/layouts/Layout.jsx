@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Menu from "../components/Menu";
 import useAuthContext from "../contexts/useAuthContext";
 import "./Layout.css";
