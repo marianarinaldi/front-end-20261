@@ -22,7 +22,11 @@ function Requerimentos() {
         const dados = await listarRequerimentos();
         setRequerimentosData(dados);
         setErroLista("");
-      } catch {
+      } catch (erro) {
+        if (erro?.status === 401) {
+          return;
+        }
+
         setErroLista("Não foi possível carregar os requerimentos.");
       }
     };

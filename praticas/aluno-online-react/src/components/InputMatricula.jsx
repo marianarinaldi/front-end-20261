@@ -1,12 +1,12 @@
-function InputMatricula({ matricula, erro, mudaValor }) {
+function InputMatricula({ email, erro, mudaValor }) {
   return (
     <div className="form-group">
-      <label htmlFor="matricula">Matricula</label>
+      <label htmlFor="email">E-mail</label>
       <input
-        type="text"
-        id="matricula"
-        name="matricula"
-        value={matricula}
+        type="email"
+        id="email"
+        name="email"
+        value={email}
         onChange={mudaValor}
         placeholder="Digite sua matrícula"
       />
