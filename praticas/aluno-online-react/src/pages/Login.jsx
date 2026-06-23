@@ -45,15 +45,15 @@ function Login() {
           <div className="login-error">Revise os campos destacados.</div>
         )}
 
-      <FormLogin
-        matricula={matricula}
-        setMatricula={setMatricula}
-        senha={senha}
-        setSenha={setSenha}
-        matriculaErro={matriculaErro}
-        senhaErro={senhaErro}
-        handleSubmit={handleSubmit}
-      />
+        <FormLogin
+          matricula={matricula}
+          setMatricula={setMatricula}
+          senha={senha}
+          setSenha={setSenha}
+          matriculaErro={matriculaErro}
+          senhaErro={senhaErro}
+          handleSubmit={handleSubmit}
+        />
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
-import "./Layout.css";
 
 function Layout(props) {
   console.log(props);

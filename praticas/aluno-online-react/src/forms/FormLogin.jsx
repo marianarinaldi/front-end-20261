@@ -11,23 +11,15 @@ function FormLogin({
   senhaErro,
   handleSubmit,
 }) {
-  const mudaMatricula = (e) => {
-    setMatricula(e.target.value);
-  };
-
-  const mudaSenha = (e) => {
-    setSenha(e.target.value);
-  };
-
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
-        <InputMatricula
-          matricula={matricula}
-          erro={matriculaErro}
-          mudaValor={mudaMatricula}
-        />
-        <InputSenha senha={senha} erro={senhaErro} mudaValor={mudaSenha} />
-      <BotaoSubmit>Entrar</BotaoSubmit>
+    <form onSubmit={handleSubmit}>
+      <InputMatricula
+        matricula={matricula}
+        erro={matriculaErro}
+        mudaValor={setMatricula}
+      />
+      <InputSenha senha={senha} erro={senhaErro} mudaValor={setSenha} />
+      <BotaoSubmit children={"Entrar"} />
     </form>
   );
 }
