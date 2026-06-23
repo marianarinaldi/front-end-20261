@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Settings from "./pages/Settings";
 import Erro404 from "./pages/Erro404";
 import Layout from "./layouts/Layout";
+import RequerimentoForm from "./forms/RequerimentoForm";
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
         <Route path="faltas" element={<Faltas />} />
         <Route path="notas" element={<Notas />} />
         <Route path="boletos" element={<Boletos />} />
-        <Route path="requerimentos" element={<Requerimentos />} />
+        <Route path="requerimentos" element={<Requerimentos />} >
+          <Route path="novo" element={<RequerimentoForm />} />
+        </Route>
         <Route path="perfil/:id" element={<Perfil />} />
         <Route path="about" element={<About />} />
         <Route path="settings" element={<Settings />} />
