@@ -1,6 +1,5 @@
 import Tabela from "../components/Tabela";
 import Layout from "./Layout";
-import "./Faltas.css";
 
 function Faltas() {
   const faltasColunas = ["Disciplina", "Faltas", "Limite"];

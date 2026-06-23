@@ -1,6 +1,5 @@
 import Tabela from "../components/Tabela";
 import Layout from "./Layout";
-import "./Requerimentos.css";
 
 function Requerimentos() {
   const requerimentosColunas = [
