@@ -1,27 +1,44 @@
 import Tabela from "../components/Tabela";
 import "./Requerimentos.css";
+import { useEffect, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
+import { listarRequerimentos } from "../services/requerimentoService";
 
 function Requerimentos() {
   const location = useLocation();
   const exibirFormulario = location.pathname.endsWith("/novo");
+  const [requerimentosData, setRequerimentosData] = useState([]);
+  const [erroLista, setErroLista] = useState("");
 
   const requerimentosColunas = [
     "Tipo de Requerimento",
     "Data de Solicitação",
     "Situação",
   ];
-  const requerimentosData = [
-    { tipo: "Certificado", data: "15/05/2024", status: "Indeferido" },
-    { tipo: "Histórico Escolar", data: "10/06/2024", status: "Deferido" },
-    { tipo: "Dispensa de Disciplina", data: "20/06/2024", status: "Pendente" },
-    {
-      tipo: "Transferência de Créditos",
-      data: "05/07/2024",
-      status: "Indeferido",
-    },
-    { tipo: "Extensão de Prazo", data: "12/07/2024", status: "Pendente" },
-  ];
+
+  useEffect(() => {
+    const carregarRequerimentos = async () => {
+      try {
+        const dados = await listarRequerimentos();
+        setRequerimentosData(dados);
+        setErroLista("");
+      } catch {
+        setErroLista("Não foi possível carregar os requerimentos.");
+      }
+    };
+
+    carregarRequerimentos();
+  }, []);
+
+  const adicionarRequerimentoNaLista = (novoRequerimento) => {
+    setRequerimentosData((listaAtual) => [...listaAtual, novoRequerimento]);
+  };
+
+  const dadosTabela = requerimentosData.map((requerimento) => ({
+    tipo: requerimento.tipo,
+    data: requerimento.data,
+    status: requerimento.status,
+  }));
 
   return (
     <>
@@ -41,12 +58,13 @@ function Requerimentos() {
       </header>
 
       {exibirFormulario ? (
-        <Outlet />
+        <Outlet context={{ adicionarRequerimentoNaLista }} />
       ) : (
         <section className="requerimentos-container">
+          {erroLista && <p className="requerimentos-error">{erroLista}</p>}
           <Tabela
             titulos={requerimentosColunas}
-            dados={requerimentosData}
+            dados={dadosTabela}
             classPrefix="requerimentos"
             tituloSecao="Solicitações"
           />
