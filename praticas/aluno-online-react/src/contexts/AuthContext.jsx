@@ -23,7 +23,6 @@ function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider value={{ logado, usuario, login, logout }}>
-      {/* value =  estado compartilhado */}
       {children}
     </AuthContext.Provider>
   );

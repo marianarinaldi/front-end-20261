@@ -1,14 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Menu from "../components/Menu";
-// import useAuthContext from "../contexts/useAuthContext";
+import useAuthContext from "../contexts/useAuthContext";
 import "./Layout.css";
 
 function Layout() {
-  // const { logado } = useAuthContext();
+  const { logado } = useAuthContext();
 
-  // if (!logado) {
-  //   return <Navigate to="/login" replace />;
-  // }
+  if (!logado) {
+    return <Navigate to="/login" replace />;
+  }
 
   return (
     <div className="app-layout">
